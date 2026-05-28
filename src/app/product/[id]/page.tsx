@@ -1,6 +1,6 @@
 import { products } from "@/data/products";
-
-import Container from "../../../components/shared/Container";
+import Navbar from "@/components/layout/Navbar";
+import Container from "@/components/shared/Container";
 import ProductSection from "@/components/home/ProductSection";
 
 import {
@@ -11,17 +11,19 @@ import {
 import { FaStar } from "react-icons/fa";
 
 type Props = {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 };
 
-export default function ProductDetailsPage({
+export default async function ProductDetailsPage({
   params,
 }: Props) {
 
+  const { id } = await params;
+
   const product = products.find(
-    (item) => item.id === Number(params.id)
+    (item) => item.id === Number(id)
   );
 
   if (!product) {
@@ -39,12 +41,12 @@ export default function ProductDetailsPage({
   );
 
   return (
-    <main className="bg-[#f5f7fa] min-h-screen py-10">
-
+    <main className="bg-[#f5f7fa] min-h-screen ">
+      <Navbar />
       <Container>
 
         {/* Product Section */}
-        <div className="bg-white rounded-3xl p-6 md:p-10 grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="bg-white rounded-3xl p-6 md:p-10 grid grid-cols-1 lg:grid-cols-2 gap-10 mt-5">
 
           {/* LEFT */}
           <div>

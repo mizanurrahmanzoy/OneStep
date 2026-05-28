@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { FiHeart, FiShoppingCart } from "react-icons/fi";
 import { FaStar } from "react-icons/fa";
+import { useCartStore } from "@/store/cartStore";
 
 type Product = {
   id: number;
@@ -17,13 +18,15 @@ type Product = {
 type Props = {
   product: Product;
 };
-
 const ProductCard = ({ product }: Props) => {
+  const addToCart = useCartStore(
+    (state) => state.addToCart
+  );
   return (
     <Link
-  href={`/product/${product.id}`}
-  className="group bg-white rounded-3xl border border-gray-200 overflow-hidden hover:shadow-xl transition duration-300 block"
->
+      href={`/product/${product.id}`}
+      className="group bg-white rounded-3xl border border-gray-200 overflow-hidden hover:shadow-xl transition duration-300 block"
+    >
 
       {/* Image */}
       <div className="relative overflow-hidden bg-gray-100">
@@ -84,7 +87,19 @@ const ProductCard = ({ product }: Props) => {
         </div>
 
         {/* Button */}
-        <button className="mt-5 w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-2xl flex items-center justify-center gap-2 transition font-medium">
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+
+            addToCart({
+              id: product.id,
+              title: product.title,
+              price: product.price,
+              image: product.image,
+            });
+          }}
+          className="mt-5 w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-2xl flex items-center justify-center gap-2 transition font-medium"
+        >
 
           <FiShoppingCart />
 
