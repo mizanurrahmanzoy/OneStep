@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 import {
@@ -19,7 +19,7 @@ import toast from "react-hot-toast";
 import Container from "@/components/shared/Container";
 
 export default function LoginPage() {
-
+  const router = useRouter();
   const [loading, setLoading] =
     useState(false);
 
@@ -48,6 +48,7 @@ export default function LoginPage() {
       toast.success(
         "Login Successful"
       );
+      router.push("/");
 
     } catch (error: any) {
 
@@ -71,6 +72,7 @@ export default function LoginPage() {
       toast.success(
         "Google Login Successful"
       );
+      router.push("/");
 
     } catch (error: any) {
 

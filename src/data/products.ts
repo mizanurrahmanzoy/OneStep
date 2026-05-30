@@ -9,6 +9,9 @@ export const products = [
     discount: 20,
     rating: 4.5,
     category: "Electronics",
+    subCategory: "Audio & Video",
+    childCategory: "Headphones",
+
   },
 
   {
@@ -21,6 +24,8 @@ export const products = [
     discount: 15,
     rating: 4.3,
     category: "Home Decor",
+    subCategory: "Lighting",
+    childCategory: "Table Lamps",
   },
 
   {
@@ -33,6 +38,8 @@ export const products = [
     discount: 30,
     rating: 4.8,
     category: "Cosmetics",
+    subCategory: "Makeup",
+    childCategory: "Lipsticks",
   },
 
   {
@@ -45,6 +52,8 @@ export const products = [
     discount: 12,
     rating: 4.7,
     category: "Jewelry",
+    subCategory: "Necklaces",
+      childCategory: "Gold Necklaces",
   },
 
   {
@@ -57,5 +66,44 @@ export const products = [
     discount: 18,
     rating: 4.6,
     category: "Electronics",
+    subCategory: "Audio & Video",
+    childCategory: "Speakers",
   },
+  {
+    id: 6,
+    title: "Decorative Wall Art",
+    price: 1500,
+    oldPrice: 2000,
+    image:
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85", 
+    discount: 25,
+    rating: 4.4,
+    category: "Home Decor",
+    subCategory: "Wall Decor",
+    childCategory: "Wall Art",
+  },{
+    id: 7,
+    title: "Eyeshadow Palette",
+    price: 1200,  
+    oldPrice: 1600,
+    image:
+      "https://images.unsplash.com/photo-1596462502278-27bfdc403348",
+    discount: 20,
+    rating: 4.7,
+    category: "Cosmetics",
+    subCategory: "Makeup",
+    childCategory: "Eyeshadow Palettes",
+  },{
+    id: 8,
+    title: "Samsung Galaxy S21",
+    price: 1800,
+    oldPrice: 2200,
+    image:
+      "https://images.unsplash.com/photo-1617038220319-276d3cfab638",
+    discount: 15,
+    rating: 4.5,
+    category: "Electronics",
+    subCategory: "Smartphones",
+    childCategory: "Android Phones",
+  }
 ];
