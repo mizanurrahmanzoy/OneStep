@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FiHeart, FiShoppingCart } from "react-icons/fi";
 import { FaStar } from "react-icons/fa";
 import { useCartStore } from "@/store/cartStore";
+import { products } from "@/data/products";
 
 type Product = {
   id: number;
