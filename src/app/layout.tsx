@@ -7,6 +7,7 @@ import { AuthProvider } from "@/context/AuthProvider";
 import CartDrawer from "@/components/cart/CartDrawer";
 
 import { Toaster } from "react-hot-toast";
+import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: "OneStep",
@@ -32,8 +33,9 @@ export default function RootLayout({
 
           <Toaster position="top-right" />
 
-        </AuthProvider>
+          <Footer />
 
+        </AuthProvider>
       </body>
 
     </html>
